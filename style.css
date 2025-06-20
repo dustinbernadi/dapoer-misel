@@ -79,7 +79,6 @@ header nav a:hover {
 
 section {
   padding: 100px 0 60px; /* top padding includes header height */
-  background-color: var(--warna-background);
 }
 
 /* Landing Hero */
