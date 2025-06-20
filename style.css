@@ -6,6 +6,11 @@
   --warna-background: #11100c;
   --warna-secondary: #393e28;
   --warna-accent:#d7a901 ;
+  --warna-hover: #f1c56d; /* hover untuk tombol */
+  --warna-background-light: #1b1a15; /* background card ringan */
+  --warna-border: #5a4e3b; /* border halus */
+  --warna-text-light: #f4e7c1; /* teks terang di dark mode */
+  --warna-form-bg: #2a281d;
 }
 
 * {
@@ -22,7 +27,18 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: var(--warna-background);
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
 }
+
+
+/* Hilangkan scroll bar jika tidak perlu tampil, tapi masih bisa scroll */
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
 
 header {
   position: fixed;
@@ -52,7 +68,7 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #fccb1c;
+  color: var(--warna-hover);
 }
 
 .container {
@@ -63,12 +79,13 @@ header nav a:hover {
 
 section {
   padding: 100px 0 60px; /* top padding includes header height */
+  background-color: var(--warna-background);
 }
 
 /* Landing Hero */
 #landing {
   position: relative;
-  background: url("mie-ayam.jpg") no-repeat center center/cover;
+  background: url("assets/mie-ayam.jpg") no-repeat center center/cover;
   height: 90vh;
   color: var(--warna-text);
   display: flex;
@@ -172,7 +189,7 @@ section {
 .menu-content h3 {
   margin: 0 0 0.6rem;
   font-size: 1.3rem;
-  color: var(--warna-background);
+  color: var(--warna-background-light);
 }
 
 .menu-content p {
@@ -180,6 +197,103 @@ section {
   font-size: 0.95rem;
   color: var(--warna-background);
   line-height: 1.4;
+}
+
+/*location section*/
+
+#location h2 {
+  text-align: right;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--warna-utama);
+}
+
+#location .location-content {
+  display: flex;
+}
+
+#location .location-p {
+  margin-left: 20px;
+  padding: 20px;
+  color: var(--warna-text);
+  font-size: 1.2rem;
+  width: 300px;
+  background-color: var(--warna-secondary);
+  border-radius: 15px;
+}
+
+/*formulir section*/
+
+.peringatan-tutup {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+#formulir h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--warna-utama);
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+#formulir .formulir-content {
+  background-color: var(--warna-form-bg);
+  border-radius: 15px;
+}
+
+#formulir .label {
+  color: var(--warna-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+#formulir .input {
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  background-color:var(--warna-background-light) ;
+  color: var(--warna-text-light);
+  border-radius: 15px;
+  border: 1px solid var(--warna-border);
+}
+
+#formulir button {
+  padding: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 15px;
+  background-color: var(--warna-utama);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--warna-background);
+  border: none;
+  transition: 0.2s ease-in-out ;
+}
+
+#formulir button:hover {
+  color: var(--warna-background-light);
+  background-color: #f8cd32;
 }
 
 /* Contact Section */
@@ -248,6 +362,25 @@ footer {
 
   #landing p {
     font-size: 1.1rem;
+  }
+
+  #location .location-content {
+    flex-direction: column;
+  }
+
+  #location .location-p {
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #location h2 {
+    text-align: center;
+  }
+
+  #formulir h2 {
+    text-align: center;
   }
 }
 
